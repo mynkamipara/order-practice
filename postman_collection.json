@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "13f1cf8f-9122-4f52-9581-c73e857a406d",
+		"name": "Product Practice Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sync Product using Json File",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product/sync",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"sync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product List with filter and search",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product?type=topping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "vanilla",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "topping"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product details get by id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						":id"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "vanilla",
+							"disabled": true
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create order with scoops",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scoops\": [\n        { \"flavor_id\": 3, \"topping_id\":33 },\n        { \"flavor_id\": 3 }\n    ],\n    \"pickupTime\":\"2024-12-15T06:30:00-05:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/product/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Order details by order id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/product/order/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"product",
+						"order",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1733215395293607"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
