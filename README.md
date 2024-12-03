@@ -37,3 +37,9 @@ npm run start:dev
 ```
 http://localhost:3000
 ```
+
+### Postman collection
+here you can download postman_collection.json and import and test each and every endpoint.
+```
+postman_collection.json
+```
